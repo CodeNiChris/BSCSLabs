@@ -3,8 +3,11 @@ table, th, td {
     border-collapse: collapse;
 }
 
-th {
-    
+.red {
     background-color:blue;
+}
+
+.centeralign{
+    text-align: center;
 }
 

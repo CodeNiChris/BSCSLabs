@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "result">Enter your grade: </p>
+    <input type="text" id="grade" placeholder="Grade">
+    <input type="text" id="score" placeholder="Total Score">
+    <select id="select">
+        <option value = "letter">Letter Grade</option>
+        <option value = "passfail">Pass/Fail</option>
+    </select>
+
+    <button onclick="calculate()">Calculate</button>
+    <br>
+    <img src="two.png" id="image" style = "width: 500px; height: 500px;" alt="">
+
+    <script>
+    function calculate(){
+
+        let grade = Number(document.getElementById("grade").value);
+        let score = Number(document.getElementById("score").value);
+        let finalResult = document.getElementById("result").value;
+        finalResult = Number(grade / score) * 100;
+
+        let select = document.getElementById("select").value;
+
+        if(select == "letter"){
+            if (finalResult >= 91) {
+                document.getElementById("result").textContent = "Excellent";
+                document.getElementById("image").src = "one.png";
+            }
+            else if (finalResult >= 86){
+                document.getElementById("result").textContent = "Great";
+                document.getElementById("image").src = "one.png";
+            }
+            else if (finalResult >= 81){
+                document.getElementById("result").textContent = "Good";
+                document.getElementById("image").src = "one.png";
+            }
+            else if (finalResult >= 75){
+                document.getElementById("result").textContent = "Nice";
+                document.getElementById("image").src = "one.png";
+            }
+            else {
+                document.getElementById("result").textContent = "Better luck next time";
+                document.getElementById("image").src = "two.png";
+            }
+            
+        }
+        else if(select == "passfail"){
+            if (finalResult >= 75) {
+                document.getElementById("result").textContent = "Pass";
+                document.getElementById("image").src = "one.png";
+            }
+            else{
+                document.getElementById("result").textContent = "Fail";
+                document.getElementById("image").src = "two.png";
+            }
+        }
+    }
+    </script>
+</body>
+</html> 
